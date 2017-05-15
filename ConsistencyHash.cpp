@@ -50,8 +50,10 @@ ConsistencyHash::getMappingNodeFromKey(HashNode::KeyType key) {
     if (iter == hashMap_.end()) {
         iter = hashMap_.begin();
     }
+    if (hashMap_.end() != iter) {
+        iter->second->increaseMappedCount();
+    }
 
-    iter->second->increaseMappedCount();
     return iter;
 }
 

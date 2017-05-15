@@ -10,8 +10,9 @@ HashNode::HashNode(MD5 *md5, std::string initName, int nameNum) :
     std::string virName;
 
     for (int i = 0; i < nameNum_; i++) {
-        srandom(random());
-        virName = initName_ + "HashNode" + std::to_string(i) + std::to_string(random());
+        srandom(i * i);
+        virName = initName_ + std::to_string(i * random()) + std::to_string(i * random() * random());
+
         md5_->GenerateMD5(virName.c_str(), virName.length());
         keys_.push_back(md5_->ToULong32());
     }

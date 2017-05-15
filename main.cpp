@@ -16,7 +16,7 @@ int main()
 
     MD5 md5;
 
-    for (int i = 0; i < 2000; i++) {
+    for (int i = 0; i < 8000; i++) {
         string str = "Start";
         string str2 = str + "test" + std::to_string(i * 100);
 
